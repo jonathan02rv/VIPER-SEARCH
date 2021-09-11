@@ -12,10 +12,21 @@ class SearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
+        setupView()
+        
         // Do any additional setup after loading the view.
     }
     
+    private func setupView(){
+        setupSearchBar()
+        setupTableView()
+    }
+    
+    
+    func setupTableView(){
+        self.tableView.register(HeaderViewCell.nib(), forCellReuseIdentifier: HeaderViewCell.identifier)
+        self.tableView.register(RowViewCell.nib(), forCellReuseIdentifier: RowViewCell.identifier)
+    }
     
     func setupSearchBar(){
         searchController = UISearchController()
@@ -39,8 +50,18 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
 
 extension SearchViewController{
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderViewCell.identifier) as! HeaderViewCell
+        cell.txtTitle.text = "Title 1"
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return Int.random(in: 1..<3)
     }
     
     
@@ -49,8 +70,8 @@ extension SearchViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "item \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: RowViewCell.identifier, for: indexPath) as! RowViewCell
+        cell.txtMeaning.text = "item \(indexPath.row)"
         return cell
     }
 }

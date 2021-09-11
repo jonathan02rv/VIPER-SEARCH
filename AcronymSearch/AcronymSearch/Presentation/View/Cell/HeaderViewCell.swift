@@ -8,8 +8,14 @@
 import UIKit
 
 class HeaderViewCell: UITableViewCell {
+    
+    static let identifier = "HeaderViewCell"
+    static func nib() -> UINib{
+        return UINib(nibName: "HeaderViewCell", bundle: nil)
+    }
 
     @IBOutlet weak var txtTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,6 +8,10 @@
 import UIKit
 
 class RowViewCell: UITableViewCell {
+    static let identifier = "RowViewCell"
+    static func nib() -> UINib{
+        return UINib(nibName: "RowViewCell", bundle: nil)
+    }
 
     @IBOutlet weak var txtMeaning: UILabel!
     
