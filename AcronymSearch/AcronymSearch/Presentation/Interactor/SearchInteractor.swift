@@ -26,7 +26,6 @@ class SearchInteractor: SearchInteractorProtocol{
     
     func getMeaningAcronym(acronymText:String){
         workItem?.cancel()
-        
         let newWorkItem = DispatchWorkItem { [weak self]() in
             self?.useCase.getMeaningAcronym(acronymText: acronymText) { [weak self](result) in
                 switch result{

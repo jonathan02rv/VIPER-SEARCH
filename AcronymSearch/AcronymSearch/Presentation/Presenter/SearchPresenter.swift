@@ -34,10 +34,12 @@ class SearchPresenter{
 
 extension SearchPresenter: SearchPresenterProtocol{
     func searcMeaning(acronymText: String){
+        self.router.startLoading()
         self.interactor.getMeaningAcronym(acronymText: acronymText)
     }
     
     func fillDataModel(data: [MeaningModel]){
+        self.router.stopLoading()
         self.view?.setTitleView(title: "Acronym: \(interactor.getAcronymFound())")
         viewData = data
         self.view?.reloadTable()
@@ -60,6 +62,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func removeAllData(){
+        self.router.stopLoading()
         self.view?.setTitleView(title: "Acronyms")
         viewData.removeAll()
         self.view?.reloadTable()
