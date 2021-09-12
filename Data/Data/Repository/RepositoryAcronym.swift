@@ -13,4 +13,8 @@ public struct RepositoryAcronym: RepositoryAcronymProtocol{
     public init(){
         
     }
+    
+    public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,Error>)->Void){
+        
+    }
 }

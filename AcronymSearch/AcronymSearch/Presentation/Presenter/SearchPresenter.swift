@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchPresenterProtocol:class{
-    
+    func searcMeaning(acronymText: String)
 }
 
 class SearchPresenter{
@@ -24,5 +24,7 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
-    
+    func searcMeaning(acronymText: String){
+        
+    }
 }
