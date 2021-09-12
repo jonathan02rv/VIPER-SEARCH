@@ -49,9 +49,8 @@ class SearchViewController: UITableViewController {
 
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
     func updateSearchResults(for searchController: UISearchController) {
-        guard let inputText = searchController.searchBar.text?.trimmingCharacters(in: CharacterSet.whitespaces) else{return}
-        print(inputText)
-        presenter.searcMeaning(acronymText: "HMM")
+        guard let inputText = searchController.searchBar.text?.trimmingCharacters(in: CharacterSet.whitespaces), !inputText.isEmpty else{return}
+        presenter.searcMeaning(acronymText: inputText)
     }
     
 }
@@ -87,7 +86,9 @@ extension SearchViewController{
 
 extension SearchViewController:SearchViewControllerProtocol{
     func reloadTable() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }
