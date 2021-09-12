@@ -31,10 +31,10 @@ class SearchInteractor: SearchInteractorProtocol{
                 switch result{
                 case .success(let data):
                     self?.dataInteractor = data
-                    self?.presenter?.fillDataModel(data: data.meaningList)
+                    self?.presenter?.SuccessResultPresenter(data: data.meaningList)
                 case .failure(let error):
                     print(error)
-                    self?.presenter?.removeAllData()
+                    self?.presenter?.FailedResultPresenter()
                 }
             }
         }

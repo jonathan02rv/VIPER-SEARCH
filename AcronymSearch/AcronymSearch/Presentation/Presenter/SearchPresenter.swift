@@ -10,12 +10,12 @@ import Domain
 
 protocol SearchPresenterProtocol:class{
     func searcMeaning(acronymText: String)
-    func fillDataModel(data: [MeaningModel])
+    func SuccessResultPresenter(data: [MeaningModel])
     func getSectionName(section: Int)->String
     func getNumberOfSection()->Int
     func numberOfRowsInSection(section: Int)->Int
     func getDataRow(indexPath: IndexPath)->VariantModel
-    func removeAllData()
+    func FailedResultPresenter()
 }
 
 class SearchPresenter{
@@ -38,10 +38,17 @@ extension SearchPresenter: SearchPresenterProtocol{
         self.interactor.getMeaningAcronym(acronymText: acronymText)
     }
     
-    func fillDataModel(data: [MeaningModel]){
+    func SuccessResultPresenter(data: [MeaningModel]){
         self.router.stopLoading()
         self.view?.setTitleView(title: "Acronym: \(interactor.getAcronymFound())")
         viewData = data
+        self.view?.reloadTable()
+    }
+    
+    func FailedResultPresenter(){
+        self.router.stopLoading()
+        self.view?.setTitleView(title: "Acronyms")
+        viewData.removeAll()
         self.view?.reloadTable()
     }
     
@@ -59,12 +66,5 @@ extension SearchPresenter: SearchPresenterProtocol{
     
     func getDataRow(indexPath: IndexPath)->VariantModel{
         viewData[indexPath.section].variantList[indexPath.row]
-    }
-    
-    func removeAllData(){
-        self.router.stopLoading()
-        self.view?.setTitleView(title: "Acronyms")
-        viewData.removeAll()
-        self.view?.reloadTable()
     }
 }
