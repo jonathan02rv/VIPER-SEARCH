@@ -23,6 +23,10 @@
 		3F8AABF226ED134200939DA2 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8AABF026ED134200939DA2 /* HeaderViewCell.xib */; };
 		3F8AABF726ED136000939DA2 /* RowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AABF526ED136000939DA2 /* RowViewCell.swift */; };
 		3F8AABF826ED136000939DA2 /* RowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8AABF626ED136000939DA2 /* RowViewCell.xib */; };
+		3F8AABFC26ED812900939DA2 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AABFB26ED812900939DA2 /* SearchPresenter.swift */; };
+		3F8AAC0026ED828B00939DA2 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AABFF26ED828B00939DA2 /* SearchRouter.swift */; };
+		3F8AAC0A26ED837E00939DA2 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC0926ED837E00939DA2 /* SearchInteractor.swift */; };
+		3F8AAC0E26ED84B800939DA2 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC0D26ED84B800939DA2 /* SearchConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,10 @@
 		3F8AABF026ED134200939DA2 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
 		3F8AABF526ED136000939DA2 /* RowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewCell.swift; sourceTree = "<group>"; };
 		3F8AABF626ED136000939DA2 /* RowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowViewCell.xib; sourceTree = "<group>"; };
+		3F8AABFB26ED812900939DA2 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		3F8AABFF26ED828B00939DA2 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		3F8AAC0926ED837E00939DA2 /* SearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		3F8AAC0D26ED84B800939DA2 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +187,8 @@
 		3F8AABD926ECFFFA00939DA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3F8AABE326ED012300939DA2 /* Configurator */,
 				3F8AABE226ED011000939DA2 /* Controller */,
+				3F8AABE326ED012300939DA2 /* Configurator */,
 				3F8AABE126ED00FA00939DA2 /* Cell */,
 			);
 			path = View;
@@ -189,6 +197,7 @@
 		3F8AABDA26ED000500939DA2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC0926ED837E00939DA2 /* SearchInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 		3F8AABDB26ED000E00939DA2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AABFB26ED812900939DA2 /* SearchPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 		3F8AABDC26ED003200939DA2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AABFF26ED828B00939DA2 /* SearchRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 		3F8AABE326ED012300939DA2 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC0D26ED84B800939DA2 /* SearchConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -378,8 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8AAC0E26ED84B800939DA2 /* SearchConfigurator.swift in Sources */,
 				3F8AAB2126ECF1E800939DA2 /* AppDelegate.swift in Sources */,
 				3F8AABDE26ED008A00939DA2 /* SearchViewController.swift in Sources */,
+				3F8AAC0A26ED837E00939DA2 /* SearchInteractor.swift in Sources */,
+				3F8AABFC26ED812900939DA2 /* SearchPresenter.swift in Sources */,
+				3F8AAC0026ED828B00939DA2 /* SearchRouter.swift in Sources */,
 				3F8AAB2326ECF1E800939DA2 /* SceneDelegate.swift in Sources */,
 				3F8AABF726ED136000939DA2 /* RowViewCell.swift in Sources */,
 				3F8AABF126ED134200939DA2 /* HeaderViewCell.swift in Sources */,

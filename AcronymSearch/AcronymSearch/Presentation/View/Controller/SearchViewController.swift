@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol SearchViewControllerProtocol: class{
+    
+}
+
 class SearchViewController: UITableViewController {
     var searchController: UISearchController!
+    
+    var presenter:SearchPresenterProtocol!
+    let configurator = SearchConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +25,7 @@ class SearchViewController: UITableViewController {
     }
     
     private func setupView(){
+        configurator.configure(self)
         setupSearchBar()
         setupTableView()
     }
@@ -74,4 +82,9 @@ extension SearchViewController{
         cell.txtMeaning.text = "item \(indexPath.row)"
         return cell
     }
+}
+
+
+extension SearchViewController:SearchViewControllerProtocol{
+    
 }
