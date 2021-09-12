@@ -9,9 +9,11 @@ import UIKit
 
 protocol SearchViewControllerProtocol: class{
     func reloadTable()
+    func setTitleView(title: String)
 }
 
 class SearchViewController: UITableViewController {
+    
     var searchController: UISearchController!
     
     var presenter:SearchPresenterProtocol!
@@ -20,26 +22,26 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        // Do any additional setup after loading the view.
     }
     
     private func setupView(){
         configurator.configure(self)
-        setupSearchBar()
+        setupSearchBarController()
         setupTableView()
     }
-    
     
     func setupTableView(){
         self.tableView.register(HeaderViewCell.nib(), forCellReuseIdentifier: HeaderViewCell.identifier)
         self.tableView.register(RowViewCell.nib(), forCellReuseIdentifier: RowViewCell.identifier)
     }
+
     
-    func setupSearchBar(){
+    func setupSearchBarController(){
         searchController = UISearchController()
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
         navigationItem.searchController = searchController
         self.title = "Acronyms"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -50,21 +52,15 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
     func updateSearchResults(for searchController: UISearchController) {
         guard let inputText = searchController.searchBar.text?.trimmingCharacters(in: CharacterSet.whitespaces), !inputText.isEmpty else{return}
-        self.title = "Acronym: \(inputText)"
         presenter.searcMeaning(acronymText: inputText)
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        //reloadTable()
-    }
-    
 }
 
 extension SearchViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeaderViewCell.identifier) as! HeaderViewCell
-        cell.txtTitle.text = presenter.getSectionName(section: section)
+        cell.txtTitle.text = "Section \(section+1): \(presenter.getSectionName(section: section))"
         return cell
     }
     
@@ -73,7 +69,8 @@ extension SearchViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.getNumberOfSection()
+        let count = presenter.getNumberOfSection()
+        return count
     }
     
     
@@ -97,5 +94,9 @@ extension SearchViewController:SearchViewControllerProtocol{
             self.tableView.reloadData()
         }
     }
-    
+    func setTitleView(title: String){
+        DispatchQueue.main.async {
+            self.title = title
+        }
+    }
 }

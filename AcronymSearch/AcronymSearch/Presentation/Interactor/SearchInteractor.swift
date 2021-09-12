@@ -10,6 +10,7 @@ import Domain
 
 protocol SearchInteractorProtocol{
     func getMeaningAcronym(acronymText:String)
+    func getAcronymFounded() -> String
 }
 
 class SearchInteractor: SearchInteractorProtocol{
@@ -34,11 +35,17 @@ class SearchInteractor: SearchInteractorProtocol{
                     self?.presenter?.fillDataModel(data: data.meaningList)
                 case .failure(let error):
                     print(error)
+                    self?.presenter?.removeAllData()
                 }
             }
         }
         workItem = newWorkItem
-        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(300), execute: newWorkItem)
+        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(50), execute: newWorkItem)
         
+    }
+    
+    func getAcronymFounded() -> String{
+        guard let acronymData = dataInteractor else {return ""}
+        return acronymData.name
     }
 }

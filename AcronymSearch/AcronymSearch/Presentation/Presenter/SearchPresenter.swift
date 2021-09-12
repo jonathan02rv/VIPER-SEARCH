@@ -38,6 +38,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func fillDataModel(data: [MeaningModel]){
+        self.view?.setTitleView(title: "Acronym: \(interactor.getAcronymFounded())")
         viewData = data
         self.view?.reloadTable()
     }
@@ -59,6 +60,8 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func removeAllData(){
+        self.view?.setTitleView(title: "Acronyms")
         viewData.removeAll()
+        self.view?.reloadTable()
     }
 }
