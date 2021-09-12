@@ -10,6 +10,7 @@
 		3F8AAB6726ECF21200939DA2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8AAB5D26ECF21100939DA2 /* Domain.framework */; };
 		3F8AAB6C26ECF21200939DA2 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAB6B26ECF21200939DA2 /* DomainTests.swift */; };
 		3F8AAB6E26ECF21200939DA2 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F8AAB6026ECF21100939DA2 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F8AAC1326ED882B00939DA2 /* AcronymModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		3F8AAB6626ECF21200939DA2 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8AAB6B26ECF21200939DA2 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		3F8AAB6D26ECF21200939DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		3F8AAB5F26ECF21100939DA2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC1126ED87F000939DA2 /* Model */,
 				3F8AAB6026ECF21100939DA2 /* Domain.h */,
 				3F8AAB6126ECF21100939DA2 /* Info.plist */,
 			);
@@ -84,6 +87,14 @@
 				3F8AAB6D26ECF21200939DA2 /* Info.plist */,
 			);
 			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		3F8AAC1126ED87F000939DA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				TargetAttributes = {
 					3F8AAB5C26ECF21100939DA2 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					3F8AAB6526ECF21200939DA2 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8AAC1326ED882B00939DA2 /* AcronymModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +354,7 @@
 		3F8AAB7226ECF21200939DA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
@@ -357,6 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.ios.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +380,7 @@
 		3F8AAB7326ECF21200939DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
@@ -389,6 +405,7 @@
 		3F8AAB7526ECF21200939DA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				INFOPLIST_FILE = DomainTests/Info.plist;
@@ -407,6 +424,7 @@
 		3F8AAB7626ECF21200939DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				INFOPLIST_FILE = DomainTests/Info.plist;
