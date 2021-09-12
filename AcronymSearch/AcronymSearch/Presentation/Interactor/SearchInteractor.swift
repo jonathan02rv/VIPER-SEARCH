@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import Domain
 
 protocol SearchInteractorProtocol{
     
 }
 
 class SearchInteractor: SearchInteractorProtocol{
-    weak var presenter: SearchPresenterProtocol?
     
-    init() {
+    var dataInteractor: AcronymModel?
+    
+    weak var presenter: SearchPresenterProtocol?
+    var useCase: UseCaseAcronymProtocol
+    
+    init(useCase: UseCaseAcronymProtocol) {
+        self.useCase = useCase
     }
 }

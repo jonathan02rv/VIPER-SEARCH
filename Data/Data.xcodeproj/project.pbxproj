@@ -12,6 +12,7 @@
 		3F8AABBA26ECF36700939DA2 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F8AABAC26ECF36600939DA2 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F8AABCF26ECF45E00939DA2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8AABCE26ECF45E00939DA2 /* Domain.framework */; };
 		3F8AAC1826ED8AF300939DA2 /* AcronymEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC1726ED8AF300939DA2 /* AcronymEntity.swift */; };
+		3F8AAC2F26ED906500939DA2 /* RepositoryAcronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		3F8AABB926ECF36700939DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F8AABCE26ECF45E00939DA2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8AAC1726ED8AF300939DA2 /* AcronymEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymEntity.swift; sourceTree = "<group>"; };
+		3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAcronym.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		3F8AABAB26ECF36600939DA2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC2D26ED8F7D00939DA2 /* Repository */,
 				3F8AAC1626ED8ADF00939DA2 /* Entity */,
 				3F8AABAC26ECF36600939DA2 /* Data.h */,
 				3F8AABAD26ECF36600939DA2 /* Info.plist */,
@@ -107,6 +110,14 @@
 				3F8AAC1726ED8AF300939DA2 /* AcronymEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		3F8AAC2D26ED8F7D00939DA2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8AAC1826ED8AF300939DA2 /* AcronymEntity.swift in Sources */,
+				3F8AAC2F26ED906500939DA2 /* RepositoryAcronym.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -351,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
