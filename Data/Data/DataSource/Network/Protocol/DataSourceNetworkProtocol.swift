@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DataSourceNetworkProtocol {
-    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymEntity,ErrorEntity>)->Void)
+    func getMeaningAcronym(request: RequestObject, completion: @escaping (Swift.Result<AcronymEntity,ErrorEntity>)->Void)
 }

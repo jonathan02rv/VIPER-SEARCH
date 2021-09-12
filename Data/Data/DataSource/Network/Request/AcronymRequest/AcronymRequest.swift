@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal struct RequestOBjectVideo: RequestObject{
+internal struct RequestOBjectAcronyms: RequestObject{
     var path: String = "/software/acromine/dictionary.py?sf="
     var method: HTTPMethod = .get
     var headers: HTTPHeaders

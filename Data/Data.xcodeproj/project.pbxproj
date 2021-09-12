@@ -20,6 +20,7 @@
 		3F8AAC4C26ED96B900939DA2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC4B26ED96B900939DA2 /* ErrorHandler.swift */; };
 		3F8AAC5C26ED978900939DA2 /* DataSourceNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */; };
 		3F8AAC6026ED981500939DA2 /* DataSourceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC5F26ED981500939DA2 /* DataSourceNetwork.swift */; };
+		3F8AAC6526ED990200939DA2 /* RequestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC6426ED990200939DA2 /* RequestUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3F8AAC4B26ED96B900939DA2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceNetworkProtocol.swift; sourceTree = "<group>"; };
 		3F8AAC5F26ED981500939DA2 /* DataSourceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceNetwork.swift; sourceTree = "<group>"; };
+		3F8AAC6426ED990200939DA2 /* RequestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				3F8AAC3226ED944B00939DA2 /* DataSource */,
 				3F8AAC2D26ED8F7D00939DA2 /* Repository */,
 				3F8AAC1626ED8ADF00939DA2 /* Entity */,
+				3F8AAC6326ED98D800939DA2 /* Utils */,
 				3F8AABAC26ECF36600939DA2 /* Data.h */,
 				3F8AABAD26ECF36600939DA2 /* Info.plist */,
 			);
@@ -211,6 +214,14 @@
 				3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		3F8AAC6326ED98D800939DA2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC6426ED990200939DA2 /* RequestUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				3F8AAC1826ED8AF300939DA2 /* AcronymEntity.swift in Sources */,
 				3F8AAC6026ED981500939DA2 /* DataSourceNetwork.swift in Sources */,
 				3F8AAC4626ED964400939DA2 /* RequestProtocol.swift in Sources */,
+				3F8AAC6526ED990200939DA2 /* RequestUtil.swift in Sources */,
 				3F8AAC2F26ED906500939DA2 /* RepositoryAcronym.swift in Sources */,
 				3F8AAC4026ED962C00939DA2 /* AuthRequest.swift in Sources */,
 			);
