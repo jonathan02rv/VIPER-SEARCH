@@ -19,6 +19,6 @@ public struct UseCaseAcronym: UseCaseAcronymProtocol{
     }
     
     public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,ErrorModel>)->Void){
-        
+        repository.getMeaningAcronym(acronymText: acronymText, completion: completion)
     }
 }

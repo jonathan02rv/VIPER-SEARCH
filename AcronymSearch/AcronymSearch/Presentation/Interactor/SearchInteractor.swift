@@ -9,7 +9,7 @@ import Foundation
 import Domain
 
 protocol SearchInteractorProtocol{
-    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<[MeaningModel],ErrorModel>)->Void)
+    func getMeaningAcronym(acronymText:String)
 }
 
 class SearchInteractor: SearchInteractorProtocol{
@@ -23,7 +23,17 @@ class SearchInteractor: SearchInteractorProtocol{
         self.useCase = useCase
     }
     
-    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<[MeaningModel],ErrorModel>)->Void){
+    func getMeaningAcronym(acronymText:String){
+        
+        useCase.getMeaningAcronym(acronymText: acronymText) { [weak self](result) in
+            switch result{
+            case .success(let data):
+                self?.dataInteractor = data
+                self?.presenter?.fillDataModel(data: data.meaningList)
+            case .failure(let error):
+                print(error)
+            }
+        }
         
     }
 }

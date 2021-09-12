@@ -31,13 +31,17 @@ struct DataSourceNetwork: DataSourceNetworkProtocol{
             let responseString = String(data: data ?? Data(), encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
             debugPrint("RESPONSE: \(responseString ?? "")")
             
-            guard let dataResponse = try? JSONDecoder().decode(AcronymEntity.self, from: data ?? Data()) else{
+            guard let dataResponse = try? JSONDecoder().decode([AcronymEntity].self, from: data ?? Data()) else{
                 print("parse error")
                 completion(.failure(ErrorHandler.get(type: .mapperError, description: error?.localizedDescription)))
                 return
             }
             print("parse SUCCESS")
-            completion(.success(dataResponse))
+            guard let firstItem = dataResponse.first else{
+                completion(.failure(ErrorHandler.get(type: .unknowError, description: error?.localizedDescription)))
+                return
+            }
+            completion(.success(firstItem))
             
         }.resume()
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchViewControllerProtocol: class{
-    
+    func reloadTable()
 }
 
 class SearchViewController: UITableViewController {
@@ -51,7 +51,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
     func updateSearchResults(for searchController: UISearchController) {
         guard let inputText = searchController.searchBar.text?.trimmingCharacters(in: CharacterSet.whitespaces) else{return}
         print(inputText)
-        self.tableView.reloadData()
+        presenter.searcMeaning(acronymText: "HMM")
     }
     
 }
@@ -86,5 +86,8 @@ extension SearchViewController{
 
 
 extension SearchViewController:SearchViewControllerProtocol{
+    func reloadTable() {
+        self.tableView.reloadData()
+    }
     
 }

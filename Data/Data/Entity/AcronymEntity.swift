@@ -22,7 +22,7 @@ struct MeaningEntity:Codable{
 
 struct VariantEntity:Codable{
     let lf: String
-    let since: String
+    let since: Int?
 }
 
 //MARK: - Mapper extension
@@ -44,7 +44,7 @@ extension MeaningEntity{
 extension VariantEntity{
     static func maper(data: [VariantEntity])->[VariantModel]{
         data.map{
-            VariantModel(description: $0.lf, year: $0.since)
+            VariantModel(description: $0.lf, year: "\(String(describing: $0.since))")
         }
     }
 }
