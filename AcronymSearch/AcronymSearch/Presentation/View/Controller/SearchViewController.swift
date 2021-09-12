@@ -50,7 +50,12 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate{
     func updateSearchResults(for searchController: UISearchController) {
         guard let inputText = searchController.searchBar.text?.trimmingCharacters(in: CharacterSet.whitespaces), !inputText.isEmpty else{return}
+        self.title = "Acronym: \(inputText)"
         presenter.searcMeaning(acronymText: inputText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //reloadTable()
     }
     
 }
@@ -59,7 +64,7 @@ extension SearchViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeaderViewCell.identifier) as! HeaderViewCell
-        cell.txtTitle.text = "Title 1"
+        cell.txtTitle.text = presenter.getSectionName(section: section)
         return cell
     }
     
@@ -68,17 +73,19 @@ extension SearchViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return Int.random(in: 1..<3)
+        return presenter.getNumberOfSection()
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int.random(in: 1..<5)
+        return presenter.numberOfRowsInSection(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RowViewCell.identifier, for: indexPath) as! RowViewCell
-        cell.txtMeaning.text = "item \(indexPath.row)"
+        let dataRow = presenter.getDataRow(indexPath: indexPath)
+        cell.txtMeaning.text = "Meaning \(indexPath.row+1): \(dataRow.description)"
+        cell.txtYear.text = "Year: \(dataRow.year)"
         return cell
     }
 }

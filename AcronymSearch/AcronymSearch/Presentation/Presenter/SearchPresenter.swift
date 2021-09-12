@@ -11,6 +11,11 @@ import Domain
 protocol SearchPresenterProtocol:class{
     func searcMeaning(acronymText: String)
     func fillDataModel(data: [MeaningModel])
+    func getSectionName(section: Int)->String
+    func getNumberOfSection()->Int
+    func numberOfRowsInSection(section: Int)->Int
+    func getDataRow(indexPath: IndexPath)->VariantModel
+    func removeAllData()
 }
 
 class SearchPresenter{
@@ -29,12 +34,31 @@ class SearchPresenter{
 
 extension SearchPresenter: SearchPresenterProtocol{
     func searcMeaning(acronymText: String){
-        
         self.interactor.getMeaningAcronym(acronymText: acronymText)
     }
     
     func fillDataModel(data: [MeaningModel]){
         viewData = data
         self.view?.reloadTable()
+    }
+    
+    func getSectionName(section: Int)->String{
+        viewData[section].description
+    }
+    
+    func getNumberOfSection()->Int{
+        viewData.count
+    }
+    
+    func numberOfRowsInSection(section: Int)->Int{
+        viewData[section].variantList.count
+    }
+    
+    func getDataRow(indexPath: IndexPath)->VariantModel{
+        viewData[indexPath.section].variantList[indexPath.row]
+    }
+    
+    func removeAllData(){
+        viewData.removeAll()
     }
 }
