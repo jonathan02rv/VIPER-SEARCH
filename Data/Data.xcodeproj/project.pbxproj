@@ -13,6 +13,13 @@
 		3F8AABCF26ECF45E00939DA2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8AABCE26ECF45E00939DA2 /* Domain.framework */; };
 		3F8AAC1826ED8AF300939DA2 /* AcronymEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC1726ED8AF300939DA2 /* AcronymEntity.swift */; };
 		3F8AAC2F26ED906500939DA2 /* RepositoryAcronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */; };
+		3F8AAC3626ED94D900939DA2 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC3526ED94D900939DA2 /* Configuration.swift */; };
+		3F8AAC3B26ED95D100939DA2 /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC3A26ED95D100939DA2 /* AcronymRequest.swift */; };
+		3F8AAC4026ED962C00939DA2 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC3F26ED962C00939DA2 /* AuthRequest.swift */; };
+		3F8AAC4626ED964400939DA2 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC4526ED964400939DA2 /* RequestProtocol.swift */; };
+		3F8AAC4C26ED96B900939DA2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC4B26ED96B900939DA2 /* ErrorHandler.swift */; };
+		3F8AAC5C26ED978900939DA2 /* DataSourceNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */; };
+		3F8AAC6026ED981500939DA2 /* DataSourceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC5F26ED981500939DA2 /* DataSourceNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,13 @@
 		3F8AABCE26ECF45E00939DA2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8AAC1726ED8AF300939DA2 /* AcronymEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymEntity.swift; sourceTree = "<group>"; };
 		3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAcronym.swift; sourceTree = "<group>"; };
+		3F8AAC3526ED94D900939DA2 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		3F8AAC3A26ED95D100939DA2 /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
+		3F8AAC3F26ED962C00939DA2 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		3F8AAC4526ED964400939DA2 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		3F8AAC4B26ED96B900939DA2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceNetworkProtocol.swift; sourceTree = "<group>"; };
+		3F8AAC5F26ED981500939DA2 /* DataSourceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		3F8AABAB26ECF36600939DA2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC3226ED944B00939DA2 /* DataSource */,
 				3F8AAC2D26ED8F7D00939DA2 /* Repository */,
 				3F8AAC1626ED8ADF00939DA2 /* Entity */,
 				3F8AABAC26ECF36600939DA2 /* Data.h */,
@@ -118,6 +133,84 @@
 				3F8AAC2E26ED906500939DA2 /* RepositoryAcronym.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		3F8AAC3226ED944B00939DA2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC3326ED945900939DA2 /* Network */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		3F8AAC3326ED945900939DA2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC5A26ED976400939DA2 /* Protocol */,
+				3F8AAC5926ED975E00939DA2 /* Implement */,
+				3F8AAC4926ED96A000939DA2 /* Response */,
+				3F8AAC3926ED95B900939DA2 /* Request */,
+				3F8AAC3426ED949A00939DA2 /* Setup */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3F8AAC3426ED949A00939DA2 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC3526ED94D900939DA2 /* Configuration.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		3F8AAC3926ED95B900939DA2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC3E26ED961100939DA2 /* AcronymRequest */,
+				3F8AAC3F26ED962C00939DA2 /* AuthRequest.swift */,
+				3F8AAC4526ED964400939DA2 /* RequestProtocol.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3F8AAC3E26ED961100939DA2 /* AcronymRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC3A26ED95D100939DA2 /* AcronymRequest.swift */,
+			);
+			path = AcronymRequest;
+			sourceTree = "<group>";
+		};
+		3F8AAC4926ED96A000939DA2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC4A26ED96A500939DA2 /* Error */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		3F8AAC4A26ED96A500939DA2 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC4B26ED96B900939DA2 /* ErrorHandler.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		3F8AAC5926ED975E00939DA2 /* Implement */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC5F26ED981500939DA2 /* DataSourceNetwork.swift */,
+			);
+			path = Implement;
+			sourceTree = "<group>";
+		};
+		3F8AAC5A26ED976400939DA2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC5B26ED978900939DA2 /* DataSourceNetworkProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +322,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8AAC3626ED94D900939DA2 /* Configuration.swift in Sources */,
+				3F8AAC5C26ED978900939DA2 /* DataSourceNetworkProtocol.swift in Sources */,
+				3F8AAC4C26ED96B900939DA2 /* ErrorHandler.swift in Sources */,
+				3F8AAC3B26ED95D100939DA2 /* AcronymRequest.swift in Sources */,
 				3F8AAC1826ED8AF300939DA2 /* AcronymEntity.swift in Sources */,
+				3F8AAC6026ED981500939DA2 /* DataSourceNetwork.swift in Sources */,
+				3F8AAC4626ED964400939DA2 /* RequestProtocol.swift in Sources */,
 				3F8AAC2F26ED906500939DA2 /* RepositoryAcronym.swift in Sources */,
+				3F8AAC4026ED962C00939DA2 /* AuthRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 		3F8AAC1326ED882B00939DA2 /* AcronymModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */; };
 		3F8AAC2526ED8DDD00939DA2 /* UseCaseAcronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC2426ED8DDD00939DA2 /* UseCaseAcronym.swift */; };
 		3F8AAC2A26ED8EAD00939DA2 /* RepositoryAcronymProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC2926ED8EAD00939DA2 /* RepositoryAcronymProtocol.swift */; };
+		3F8AAC5426ED972500939DA2 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8AAC5326ED972500939DA2 /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymModel.swift; sourceTree = "<group>"; };
 		3F8AAC2426ED8DDD00939DA2 /* UseCaseAcronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseAcronym.swift; sourceTree = "<group>"; };
 		3F8AAC2926ED8EAD00939DA2 /* RepositoryAcronymProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAcronymProtocol.swift; sourceTree = "<group>"; };
+		3F8AAC5326ED972500939DA2 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		3F8AAC1126ED87F000939DA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F8AAC5126ED96E100939DA2 /* ErrorModel */,
 				3F8AAC1226ED882B00939DA2 /* AcronymModel.swift */,
 			);
 			path = Model;
@@ -117,6 +120,14 @@
 				3F8AAC2926ED8EAD00939DA2 /* RepositoryAcronymProtocol.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		3F8AAC5126ED96E100939DA2 /* ErrorModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AAC5326ED972500939DA2 /* ErrorModel.swift */,
+			);
+			path = ErrorModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			files = (
 				3F8AAC1326ED882B00939DA2 /* AcronymModel.swift in Sources */,
 				3F8AAC2A26ED8EAD00939DA2 /* RepositoryAcronymProtocol.swift in Sources */,
+				3F8AAC5426ED972500939DA2 /* ErrorModel.swift in Sources */,
 				3F8AAC2526ED8DDD00939DA2 /* UseCaseAcronym.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

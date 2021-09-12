@@ -9,5 +9,5 @@ import Foundation
 
 
 public protocol RepositoryAcronymProtocol{
-    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,Error>)->Void)
+    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,ErrorModel>)->Void)
 }

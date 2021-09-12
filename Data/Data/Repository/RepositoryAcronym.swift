@@ -10,11 +10,13 @@ import Domain
 
 public struct RepositoryAcronym: RepositoryAcronymProtocol{
     
+    private let networkDataSource: DataSourceNetworkProtocol
+    
     public init(){
-        
+        self.networkDataSource = DataSourceNetwork()
     }
     
-    public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,Error>)->Void){
+    public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,ErrorModel>)->Void){
         
     }
 }

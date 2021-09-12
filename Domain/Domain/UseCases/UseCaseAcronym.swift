@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol UseCaseAcronymProtocol{
-    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,Error>)->Void)
+    func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,ErrorModel>)->Void)
 }
 
 public struct UseCaseAcronym: UseCaseAcronymProtocol{
@@ -18,7 +18,7 @@ public struct UseCaseAcronym: UseCaseAcronymProtocol{
         self.repository = repository
     }
     
-    public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,Error>)->Void){
+    public func getMeaningAcronym(acronymText:String, completion: @escaping (Swift.Result<AcronymModel,ErrorModel>)->Void){
         
     }
 }
