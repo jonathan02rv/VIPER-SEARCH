@@ -24,6 +24,7 @@ Domain Layer (Framework project):
 Data Layer (Framework proyect):
 ----------------------------------
 - There is the implementation of Data Source and we can choose where from we want to get our data (web API, local Data, ... )
+- For this example I implemented only networkDatasource, but our repository class can has a localDatasource also.
 - Web API: We can implement URLSESSION, Alamofire, and so on. (In this example I implemented URLSESSION)
 - Local Data: We can implement userDefaults, local files, CoreData, Keychain, and so on. (In this example I implemented local file)
 
