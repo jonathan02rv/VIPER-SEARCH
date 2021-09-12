@@ -10,7 +10,7 @@ import Domain
 
 protocol SearchInteractorProtocol{
     func getMeaningAcronym(acronymText:String)
-    func getAcronymFounded() -> String
+    func getAcronymFound() -> String
 }
 
 class SearchInteractor: SearchInteractorProtocol{
@@ -44,7 +44,7 @@ class SearchInteractor: SearchInteractorProtocol{
         
     }
     
-    func getAcronymFounded() -> String{
+    func getAcronymFound() -> String{
         guard let acronymData = dataInteractor else {return ""}
         return acronymData.name
     }
