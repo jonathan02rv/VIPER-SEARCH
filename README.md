@@ -31,4 +31,4 @@ Data Layer (Framework proyect):
 
 The Architecture's diagram:
 
-![VIPER_CLEN](https://user-images.githubusercontent.com/29233230/133003886-1c134958-76d1-40f5-b7b6-d982175ff640.jpeg)
+![VIPER_CLEN](https://user-images.githubusercontent.com/29233230/133098303-847edd7c-0f0d-4d9d-8fcc-550a7e0c1836.jpeg)
